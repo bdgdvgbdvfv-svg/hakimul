@@ -1,0 +1,15 @@
+# Robots.txt for Unique Computer Training Center
+
+User-agent: *
+Allow: /
+
+# Important Files
+Sitemap: https://uniquecomputertrainingcenter.pages.dev/sitemap.xml
+
+# Security
+Disallow: /cdn-cgi/
+Disallow: /private/
+Disallow: /tmp/
+
+# Crawl Delay
+Crawl-delay: 5
