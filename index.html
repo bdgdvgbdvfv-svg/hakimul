@@ -160,7 +160,13 @@
             <div class="flex items-center gap-2 group cursor-pointer">
                 <div class="p-2 rounded-xl group-hover:rotate-12 transition">
                     <div class="logo">
-                        <a href="#"><img src="https://ik.imagekit.io/hw7dt79rm/Screenshot%20(88)-modified.png" width="70" height="50"></a>
+<a href="#">
+<img 
+src="https://ik.imagekit.io/hw7dt79rm/Screenshot%20(88)-modified.png"
+width="70"
+height="50"
+alt="Unique Computer Training Center Logo">
+</a>
                     </div>          
                 </div>
                 <div>
@@ -497,7 +503,10 @@ fetch(url)
 
         <div class="job-card ${index >= 8 ? 'hidden-job' : ''}">
 
-            <img src="${job.image}" class="job-logo">
+<img 
+src="${job.image}" 
+alt="Recent Job Circular"
+class="job-logo">
 
             <div class="job-title">
                 ${job.title}
@@ -616,7 +625,11 @@ setInterval(loadNotice, 30000);
              <div class="grid md:grid-cols-3 gap-8 mb-12">
                 <div class="bg-white border rounded-3xl overflow-hidden card-shadow group">
                     <div class="relative overflow-hidden h-52">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Office">
+<img 
+src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000" 
+class="w-full h-full object-cover group-hover:scale-110 transition duration-500" 
+alt="Modern office workspace computer training environment">
+
                         <div class="absolute top-4 left-4 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">বেস্ট সেলার</div>
                     </div>
                     <div class="p-6">
@@ -711,15 +724,16 @@ async function loadGallery() {
         container.innerHTML = "";
 
         data.forEach(item => {
-            container.innerHTML += `
-                <div class="h-60 rounded-3xl overflow-hidden shadow-lg border-4 border-white group">
-                    <img 
-                        src="${item.image}" 
-                        class="w-full h-full object-cover group-hover:scale-110 transition duration-300 cursor-pointer"
-                    >
-                </div>
-            `;
-        });
+    container.innerHTML += `
+        <div class="h-60 rounded-3xl overflow-hidden shadow-lg border-4 border-white group">
+            <img 
+                src="${item.image}" 
+alt="Unique Computer Training Center Gallery Photo"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-300 cursor-pointer"
+            >
+        </div>
+    `;
+});
 
     } catch (error) {
         console.error("Gallery load error:", error);
@@ -743,16 +757,21 @@ fetch("https://script.google.com/macros/s/AKfycbykkkIZJIK9DH0X32B9TvKQTAENjOfPqL
 .then(r => r.json())
 .then(data => {
   document.getElementById("studentContainer").innerHTML =
-    data.map(s => `
-      <div class="group">
-        <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-blue-100 group-hover:border-blue-600 transition p-1">
-          <img src="${s.image}" class="w-full h-full object-cover rounded-full">
-        </div>
-        <h5 class="mt-4 font-bold text-lg">${s.name}</h5>
-        <p class="text-sm text-gray-500">${s.description}</p>
-      </div>
-    `).join('');
-});
+   
+  data.map(s => `
+  <div class="group">
+    <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-blue-100 group-hover:border-blue-600 transition p-1">
+      <img 
+        src="${s.image}" 
+        alt="${s.name}"
+        class="w-full h-full object-cover rounded-full"
+      >
+    </div>
+    <h5 class="mt-4 font-bold text-lg">${s.name}</h5>
+    <p class="text-sm text-gray-500">${s.description}</p>
+  </div>
+`).join('');
+
 </script>
 
     <footer id="contact" class="bg-[#0b1120] text-white pt-20 pb-8 px-4">
@@ -760,10 +779,15 @@ fetch("https://script.google.com/macros/s/AKfycbykkkIZJIK9DH0X32B9TvKQTAENjOfPqL
             <div class="col-span-1 md:col-span-1">
                 <div class="flex items-center gap-2 mb-6">
 <div class="logo">
-    <a href="index.html">
-        <img src="https://ik.imagekit.io/hw7dt79rm/Screenshot%20(88)-modified.png" alt="Company Logo" width="150" height="50">
+    <a href="index.html" aria-label="Go to homepage">
+        <img 
+            src="https://ik.imagekit.io/hw7dt79rm/Screenshot%20(88)-modified.png" 
+            alt="Unique Computer Training Center Logo"
+            width="150" 
+            height="50">
     </a>
 </div>
+
 <h2 class="text-xl font-bold">Unique Computer Training Center (329)</h2>
                 </div>
                 <p class="text-gray-400 text-sm leading-relaxed mb-6">ইউনিক কম্পিউটার ট্রেনিং সেন্টার দীর্ঘ ৫ বছর ধরে বিশ্বস্ততার সাথে দক্ষ জনশক্তি তৈরিতে কাজ করে যাচ্ছে। আমাদের লক্ষ্য বেকারত্ব দূর করা।</p>
