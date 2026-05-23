@@ -757,21 +757,16 @@ fetch("https://script.google.com/macros/s/AKfycbykkkIZJIK9DH0X32B9TvKQTAENjOfPqL
 .then(r => r.json())
 .then(data => {
   document.getElementById("studentContainer").innerHTML =
-   
-  data.map(s => `
-  <div class="group">
-    <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-blue-100 group-hover:border-blue-600 transition p-1">
-      <img 
-        src="${s.image}" 
-        alt="${s.name}"
-        class="w-full h-full object-cover rounded-full"
-      >
-    </div>
-    <h5 class="mt-4 font-bold text-lg">${s.name}</h5>
-    <p class="text-sm text-gray-500">${s.description}</p>
-  </div>
-`).join('');
-
+   data.map(s => `
+      <div class="group">
+        <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-blue-100 group-hover:border-blue-600 transition p-1">
+          <img src="${s.image}" class="w-full h-full object-cover rounded-full">
+        </div>
+        <h5 class="mt-4 font-bold text-lg">${s.name}</h5>
+        <p class="text-sm text-gray-500">${s.description}</p>
+      </div>
+    `).join('');
+ 
 </script>
 
     <footer id="contact" class="bg-[#0b1120] text-white pt-20 pb-8 px-4">
