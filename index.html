@@ -9,15 +9,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<title> ইউনিক কম্পিউটার ট্রেনিং সেন্টার হিজলগাড়ী </title>
+<title> ইউনিক কম্পিউটার ট্রেনিং সেন্টার হিজলগাড়ী |Unique Computer Training Center Hijalgari </title>
 
-<meta name="description" content="ইউনিক কম্পিউটার ট্রেনিং সেন্টার হিজলগাড়ী - কম্পিউটার অফিস অ্যাপ্লিকেশন, গ্রাফিক্স ডিজাইন, ওয়েব ডিজাইন ও ফ্রিল্যান্সিং প্রশিক্ষণ কেন্দ্র।">
+<meta name="description" content="ইউনিক কম্পিউটার ট্রেনিং সেন্টার হিজলগাড়ী | Unique Computer Training Center Hijalgari - কম্পিউটার অফিস অ্যাপ্লিকেশন, গ্রাফিক্স ডিজাইন, ওয়েব ডিজাইন ও ফ্রিল্যান্সিং প্রশিক্ষণ কেন্দ্র।">
 
 <meta name="keywords" content="কম্পিউটার ট্রেনিং সেন্টার, অফিস অ্যাপ্লিকেশন, গ্রাফিক্স ডিজাইন">
 
-<meta name="author" content="Unique Computer Training Center Hijalgari">
+<meta name="author" content="ইউনিক কম্পিউটার ট্রেনিং সেন্টার হিজলগাড়ী | Unique Computer Training Center Hijalgari">
 
-  <meta name="author" content="ইউনিক কম্পিউটার ট্রেনিং সেন্টার হিজলগাড়ী">
+  <meta name="author" content="ইউনিক কম্পিউটার ট্রেনিং সেন্টার হিজলগাড়ী |Unique Computer Training Center Hijalgari ">
 
 <meta name="robots" content="index, follow">
 
@@ -26,7 +26,7 @@
 <link rel="canonical" href="https://uniquecomputertrainingcenter.pages.dev/">
 
 <!-- Open Graph -->
-<meta property="og:title" content="ইউনিক কম্পিউটার ট্রেনিং সেন্টার হিজলগাড়ী">
+<meta property="og:title" content="ইউনিক কম্পিউটার ট্রেনিং সেন্টার হিজলগাড়ী |Unique Computer Training Center Hijalgari">
 <meta property="og:description" content="Professional Computer Training Institute in Bangladesh">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://uniquecomputertrainingcenter.pages.dev/">
@@ -59,7 +59,7 @@
 {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
-  "name": "Unique Computer Training Center Hijalgari",
+  "name": " ইউনিক কম্পিউটার ট্রেনিং সেন্টার হিজলগাড়ী | Unique Computer Training Center Hijalgari",
   "url": "https://uniquecomputertrainingcenter.pages.dev/"
 }
 </script>
@@ -613,46 +613,128 @@ setInterval(loadNotice, 30000);
             </div>
         </div>
     </section>
+<!-- Courses Section -->
+<section id="courses" class="py-24 px-4 bg-white">
+    <div class="max-w-7xl mx-auto">
 
-    <section id="courses" class="py-24 px-4 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <h2 class="text-3xl font-bold text-gray-900 section-header md:after:ml-0">কোর্সসমূহ</h2>
-                    <p class="text-gray-500 mt-2"></p>
-                </div>
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900 section-header md:after:ml-0">
+                    কোর্সসমূহ
+                </h2>
+                <p class="text-gray-500 mt-2">
+                    আমাদের জনপ্রিয় কোর্সসমূহ
+                </p>
             </div>
+        </div>
+
+        <!-- Dynamic Courses -->
+        <div id="coursesContainer" class="grid md:grid-cols-3 gap-8 mb-12"></div>
+
+    </div>
+</section>
+
+<script>
+
+const sheetURL = "https://script.google.com/macros/s/AKfycbwc6XWEyzKaTd8NRJwADKRgi3Bjndo52g7Dh1OIWKrXGoKSjGoYqa6qDCD6rFt66YLgow/exec";
+
+async function loadCourses() {
+
+    try {
+
+        const response = await fetch(sheetURL);
+        const data = await response.json();
+
+        const container = document.getElementById("coursesContainer");
+
+        container.innerHTML = "";
+
+        data.forEach(course => {
+
+            container.innerHTML += `
             
-       
-             <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-white border rounded-3xl overflow-hidden card-shadow group">
-                    <div class="relative overflow-hidden h-52">
-<img 
-src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000" 
-class="w-full h-full object-cover group-hover:scale-110 transition duration-500" 
-alt="Modern office workspace computer training environment">
+            <div class="bg-white border rounded-3xl overflow-hidden card-shadow group">
+                
+                <div class="relative overflow-hidden h-52">
 
-                        <div class="absolute top-4 left-4 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">বেস্ট সেলার</div>
+                    <img 
+                        src="${course.image}" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                        alt="${course.title}"
+                    >
+
+                    <div class="absolute top-4 left-4 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">
+                        ${course.badge}
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-1 text-yellow-400 text-xs mb-3">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <span class="text-gray-400 ml-2">(৪৮০ জন শিক্ষার্থী)</span>
-                        </div>
-                        <h4 class="text-xl font-bold mb-3 hover:text-blue-600 transition cursor-pointer">কম্পিউটার অফিস অ্যাপ্লিকেশন</h4>
-                        <div class="flex justify-between items-center text-sm text-gray-500 mb-6">
-                            <span><i class="far fa-clock mr-1"></i> ৬  মাস</span>
-                            <span><i class="fas fa-desktop mr-1"></i> </span>
-                        </div>
-                        <div class="flex items-center justify-between pt-4 border-t">
-                            <div>
-                                <span class="text-2xl font-bold text-blue-600">৳ ৩,৫০০</span>
-                                <span class="text-sm text-gray-400 line-through ml-2">৳ ৪,০০০ </span>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
+
+                <div class="p-6">
+
+                    <div class="flex items-center gap-1 text-yellow-400 text-xs mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+
+                        <span class="text-gray-400 ml-2">
+                            (${course.students})
+                        </span>
+                    </div>
+
+                    <h4 class="text-xl font-bold mb-3 hover:text-blue-600 transition cursor-pointer">
+                        ${course.title}
+                    </h4>
+
+                    <div class="flex justify-between items-center text-sm text-gray-500 mb-6">
+                        <span>
+                            <i class="far fa-clock mr-1"></i>
+                            ${course.duration}
+                        </span>
+
+                        <span>
+                            <i class="fas fa-desktop mr-1"></i>
+                            অনলাইন / অফলাইন
+                        </span>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-4 border-t">
+
+                        <div>
+                            <span class="text-2xl font-bold text-blue-600">
+                                ৳ ${course.price}
+                            </span>
+
+                            <span class="text-sm text-gray-400 line-through ml-2">
+                                ৳ ${course.oldPrice}
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
+
+            `;
+        });
+
+    } catch (error) {
+
+        console.error("Error loading courses:", error);
+
+        document.getElementById("coursesContainer").innerHTML = `
+            <div class="text-red-500 text-center col-span-3">
+                কোর্স লোড করতে সমস্যা হয়েছে
+            </div>
+        `;
+    }
+}
+
+loadCourses();
+
+</script>
             
            
             <div style="display: flex; flex-direction: row; justify-content: center; align-items: flex-start; gap: 20px; padding: 20px; font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f7f6; flex-wrap: wrap;">
