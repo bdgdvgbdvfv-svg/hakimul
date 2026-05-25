@@ -583,37 +583,90 @@ setInterval(loadNotice, 30000);
         </div>
     </section>
 
-    <section class="py-24 px-4 bg-gray-50">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 section-header">আমাদের বৈশিষ্ট্যসমূহ</h2>
-                <p class="text-gray-500 mt-4">ইউনিক কম্পিউটার ট্রেনিং সেন্টারকে বেছে নিবেন?</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl card-shadow border border-gray-100">
-                    <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
-                        <i class="fas fa-video text-2xl"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-4">ক্লাস ভিডিও রেকর্ডিং</h4>
-                    <p class="text-gray-500 leading-relaxed text-sm">প্রতিটি ক্লাসের পর হাই-কোয়ালিটি ভিডিও রেকর্ডিং দেওয়া হয় যাতে আপনি বাসায় বসে রিভিশন দিতে পারেন।</p>
-                </div>
-                <div class="bg-white p-8 rounded-3xl card-shadow border border-gray-100">
-                    <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 mb-6">
-                        <i class="fas fa-briefcase text-2xl"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-4">জব প্লেসমেন্ট সহায়তা</h4>
-                    <p class="text-gray-500 leading-relaxed text-sm">কোর্স শেষ হওয়ার পর আমরা আপনাকে বিভিন্ন কোম্পানিতে চাকরির ইন্টারভিউ দেওয়ার সুযোগ করে দেব।</p>
-                </div>
-                <div class="bg-white p-8 rounded-3xl card-shadow border border-gray-100">
-                    <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 mb-6">
-                        <i class="fas fa-headset text-2xl"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-4">লাইফটাইম সাপোর্ট</h4>
-                    <p class="text-gray-500 leading-relaxed text-sm">কোর্স চলাকালীন বা কোর্স শেষে যেকোনো সমস্যায় সবসময় আপনার পাশে থাকবো।</p>
-                </div>
-            </div>
+   <section class="py-24 px-4 bg-gray-50">
+
+    <div class="max-w-7xl mx-auto">
+
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 section-header">
+                আমাদের বৈশিষ্ট্যসমূহ
+            </h2>
+
+            <p class="text-gray-500 mt-4">
+                ইউনিক কম্পিউটার ট্রেনিং সেন্টারকে বেছে নিবেন?
+            </p>
         </div>
-    </section>
+
+        <div id="featuresContainer" class="grid md:grid-cols-3 gap-8">
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+async function loadFeatures() {
+
+    const url = "https://script.google.com/macros/s/AKfycbzI6Ypo7MXAP85q2KcWkm7_dIm2FesE6F317Dh-Rbbp3m2aeFGdiEbhhqHjojbyJ-k3/exec";
+
+    const response = await fetch(url);
+
+    const data = await response.json();
+
+    const container = document.getElementById("featuresContainer");
+
+    container.innerHTML = "";
+
+    data.forEach(item => {
+
+        let bgColor = "";
+        let textColor = "";
+
+        if(item.color === "blue") {
+            bgColor = "bg-blue-100";
+            textColor = "text-blue-600";
+        }
+
+        if(item.color === "green") {
+            bgColor = "bg-green-100";
+            textColor = "text-green-600";
+        }
+
+        if(item.color === "purple") {
+            bgColor = "bg-purple-100";
+            textColor = "text-purple-600";
+        }
+
+        container.innerHTML += `
+
+        <div class="bg-white p-8 rounded-3xl card-shadow border border-gray-100">
+
+            <div class="w-14 h-14 ${bgColor} rounded-2xl flex items-center justify-center ${textColor} mb-6">
+
+                <i class="fas ${item.icon} text-2xl"></i>
+
+            </div>
+
+            <h4 class="text-xl font-bold mb-4">
+                ${item.title}
+            </h4>
+
+            <p class="text-gray-500 leading-relaxed text-sm">
+                ${item.description}
+            </p>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+loadFeatures();
+
+</script>
 <!-- Courses Section -->
 <section id="courses" class="py-24 px-4 bg-white">
     <div class="max-w-7xl mx-auto">
