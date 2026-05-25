@@ -775,22 +775,25 @@ loadCourses();
         </div>
     </section>
 
-    <section id="gallery" class="py-24 bg-gray-50 px-4">
+   <section id="gallery" class="py-24 bg-gray-50 px-4">
 
     <div class="max-w-7xl mx-auto">
 
         <div class="text-center mb-16">
+
             <h2 class="text-3xl font-bold text-gray-900">
                 আমাদের কার্যক্রম ও গ্যালারি
             </h2>
+
             <p class="text-gray-500 mt-4">
                 আমাদের ল্যাব ও ক্লাসরুমের কিছু মুহূর্ত
             </p>
+
         </div>
 
         <!-- Gallery Grid -->
         <div id="gallery-container"
-             class="grid grid-cols-2 md:grid-cols-4 gap-4">
+             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         </div>
 
     </div>
@@ -798,35 +801,66 @@ loadCourses();
 </section>
 
 <script>
-const API_URL = "https://script.google.com/macros/s/AKfycbwXiKIlq6LZgpATpiROpy18DfPivqst7_U5cheMunz4TzNIuBqu-hnap90Hy2to7FTxXw/exec";
+
+const API_URL = "https://script.google.com/macros/s/AKfycbxHmxBnHHx7pFjRhFzuNZtf1Hv52ABst8mg0HracqR9NHM3Fq5jsx_WTfn7rzfswhoT/exec";
 
 async function loadGallery() {
+
     try {
-        const res = await fetch(API_URL);
-        const data = await res.json();
+
+        const response = await fetch(API_URL);
+
+        const data = await response.json();
 
         const container = document.getElementById("gallery-container");
+
         container.innerHTML = "";
 
         data.forEach(item => {
-    container.innerHTML += `
-        <div class="h-60 rounded-3xl overflow-hidden shadow-lg border-4 border-white group">
-            <img 
-                src="${item.image}" 
-alt="Unique Computer Training Center Gallery Photo"
-                class="w-full h-full object-cover group-hover:scale-110 transition duration-300 cursor-pointer"
-            >
-        </div>
-    `;
-});
 
-    } catch (error) {
-        console.error("Gallery load error:", error);
+            container.innerHTML += `
+
+            <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+
+                <div class="overflow-hidden">
+
+                    <img 
+                        src="${item.image}" 
+                        alt="Gallery Photo"
+                        class="w-full h-64 object-cover hover:scale-110 transition duration-300"
+                    >
+
+                </div>
+
+                <div class="p-4">
+
+                    <p class="text-center text-gray-700 font-medium">
+
+                        ${item.description}
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            `;
+
+        });
+
+    } catch(error) {
+
+        console.log(error);
+
     }
+
 }
 
 loadGallery();
+
 </script>
+</script>
+
    <section id="instructors" class="py-24 px-4 bg-white">
   <div class="max-w-7xl mx-auto text-center">
 
